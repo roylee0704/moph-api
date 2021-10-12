@@ -8,9 +8,9 @@ const endpoints = {
   immunizationHistory: `${baseUrl}/api/ImmunizationHistory`,
 };
 
-const SLEEP_DURATION = 1; //Math.random() * 5 + 5;
+const SLEEP_DURATION = 500; //Math.random() * 5 + 5;
 export const options = {
-  stages: [{ duration: "1m", target: 100 }],
+  stages: [{ duration: "1m", target: 1000 }],
 
   // hitting to moph api (directly) will resulted in "x509: certificate signed by unknown authority"
   // https://community.k6.io/t/x509-certificate-signed-by-unknown-authority/1057
