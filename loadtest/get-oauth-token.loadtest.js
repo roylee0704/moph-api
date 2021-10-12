@@ -12,6 +12,10 @@ const endpoints = {
 const SLEEP_DURATION = 1; //Math.random() * 5 + 5;
 export const options = {
   stages: [{ duration: "1m", target: 10 }],
+
+  // hitting to moph api (directly) will resulted in "x509: certificate signed by unknown authority"
+  // https://community.k6.io/t/x509-certificate-signed-by-unknown-authority/1057
+  insecureSkipTLSVerify: true,
 };
 let GetOauthTokenTrend = new Trend("Get Oauth Token");
 let ErrorCount = new Counter("errors");

@@ -15,7 +15,7 @@ function hashPassword(password) {
 
 async function getNewToken() {
   const hashedPassword = hashPassword(process.env.MOPH_API_PASSWORD);
-
+  console.log(hashedPassword, "hashed");
   const resp = await got.get(
     `${process.env.MOPH_API_URL}/token?Action=get_moph_access_token&user=${process.env.MOPH_API_USERNAME}&password_hash=${hashedPassword}&hospital_code=11770`,
     {
